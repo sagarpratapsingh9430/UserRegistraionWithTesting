@@ -12,4 +12,13 @@ public class UserRegistration {
             return "Not Valid";
         }
     }
+    public static String validLastName(String name){
+        Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
+        Matcher matcher = pattern.matcher(name);
+        if (matcher.matches()){
+            return "Valid";
+        }else {
+            return "Not Valid";
+        }
+    }
 }

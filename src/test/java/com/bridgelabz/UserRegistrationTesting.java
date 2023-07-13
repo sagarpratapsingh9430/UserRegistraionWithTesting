@@ -23,4 +23,16 @@ public class UserRegistrationTesting {
         String expected = "Not Valid";
         Assertions.assertSame(actual,expected);
     }
+    @Test
+    public void givenTextWhen_ItContains_FirstCapsIn_LastName_AndMinimumThreeAlphabet_ShouldReturnTrue(){
+        String actual = userRegistration.validLastName("Singh");
+        String expected = "Valid";
+        Assertions.assertSame(actual,expected);
+    }
+    @Test
+    public void givenTextWhen_ItNotContains_FirstCapsIn_LastName_AndMinimumThreeAlphabet_ShouldReturnTrue(){
+        String actual = userRegistration.validLastName("Sa");
+        String expected = "Not Valid";
+        Assertions.assertSame(actual,expected);
+    }
 }
