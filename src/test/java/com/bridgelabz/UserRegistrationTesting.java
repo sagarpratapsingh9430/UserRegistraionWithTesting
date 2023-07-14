@@ -59,4 +59,16 @@ public class UserRegistrationTesting {
         String expected = userRegistration.validMobileNumber("998797798");
         Assertions.assertSame(actual,expected);
     }
+    @Test
+    public void givenPassword_WhenProper_ShouldReturnTrue(){
+        String actual = "Valid";
+        String expected = userRegistration.validPassword("saagghdhd");
+        Assertions.assertSame(actual,expected);
+    }
+    @Test
+    public void givenPassword_WhenImProper_ShouldReturnTrue(){
+        String actual = "Not Valid";
+        String expected = userRegistration.validPassword("asdfsg");
+        Assertions.assertSame(actual,expected);
+    }
 }

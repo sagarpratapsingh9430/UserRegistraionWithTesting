@@ -39,4 +39,13 @@ public class UserRegistration {
             return "Not Valid";
         }
     }
+    public static String validPassword(String password){
+        Pattern pattern = Pattern.compile("^[A-Za-z0-9]{8,}");
+        Matcher matcher = pattern.matcher(password);
+        if (matcher.matches()){
+            return "Valid";
+        }else {
+            return "Not Valid";
+        }
+    }
 }
