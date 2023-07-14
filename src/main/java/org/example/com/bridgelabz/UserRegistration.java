@@ -40,7 +40,7 @@ public class UserRegistration {
         }
     }
     public static String validPassword(String password){
-        Pattern pattern = Pattern.compile("^[A-Za-z0-9]{8,}");
+        Pattern pattern = Pattern.compile("^[A-Z]+[a-zA-Z0-9]{7,}$");
         Matcher matcher = pattern.matcher(password);
         if (matcher.matches()){
             return "Valid";

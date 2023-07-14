@@ -71,4 +71,16 @@ public class UserRegistrationTesting {
         String expected = userRegistration.validPassword("asdfsg");
         Assertions.assertSame(actual,expected);
     }
+    @Test
+    public void givenPassword_WhenItContains_AtLeastOneCaps_AndMinimum_EightCharacters_ShouldReturnTrue(){
+        String actual = "Valid";
+        String expected = userRegistration.validPassword("Sagar123");
+        Assertions.assertSame(actual,expected);
+    }
+    @Test
+    public void givenPassword_WhenIt_NotContains_AtLeastOneCaps_AndMinimum_EightCharacters_ShouldReturnTrue(){
+        String actual = "Not Valid";
+        String expected = userRegistration.validPassword("Sagar");
+        Assertions.assertSame(actual,expected);
+    }
 }
