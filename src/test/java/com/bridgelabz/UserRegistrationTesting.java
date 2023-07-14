@@ -108,4 +108,17 @@ public class UserRegistrationTesting {
         String expected = userRegistration.validPassword("Sagar1@");
         Assertions.assertSame(actual,expected);
     }
+
+    @Test
+    public void gevenEmailSample_WhenProper_ShouldReturnTrue(){
+        String actual = "Valid";
+        String expected = userRegistration.validAllEmailSampleSeparately("sagar.22@gamil.com");
+        Assertions.assertSame(actual,expected);
+    }
+    @Test
+    public void gevenEmailSample_When_ImProper_ShouldReturnTrue(){
+        String actual = "Not Valid";
+        String expected = userRegistration.validAllEmailSampleSeparately("Sagar@gmail.com.in");
+        Assertions.assertSame(actual,expected);
+    }
 }

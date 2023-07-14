@@ -40,8 +40,17 @@ public class UserRegistration {
         }
     }
     public static String validPassword(String password){
-        Pattern pattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
+        Pattern pattern = Pattern.compile("[a-z]+([+-._]{0,1}[a-z0-9])*@[a-z0-9]+[.][a-z]{2,3}([.]{0,1}[a-z]{2,4})*");
         Matcher matcher = pattern.matcher(password);
+        if (matcher.matches()){
+            return "Valid";
+        }else {
+            return "Not Valid";
+        }
+    }
+    public static String validAllEmailSampleSeparately(String emailSample){
+        Pattern pattern = Pattern.compile("[a-z]+([+-._]{0,1}[a-z0-9])*@[a-z0-9]+[.][a-z]{2,3}([.]{0,1}[a-z]{2,4})*");
+        Matcher matcher = pattern.matcher(emailSample);
         if (matcher.matches()){
             return "Valid";
         }else {
