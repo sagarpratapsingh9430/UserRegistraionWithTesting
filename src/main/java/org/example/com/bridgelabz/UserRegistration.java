@@ -30,4 +30,13 @@ public class UserRegistration {
             return "Not Valid";
         }
     }
+    public static String validMobileNumber(String number){
+        Pattern pattern = Pattern.compile( "^[91]{2}\s[1-9]{9,}[0-9]+$");
+        Matcher matcher = pattern.matcher(number);
+        if (matcher.matches()){
+            return "Valid";
+        }else {
+            return "Not Valid";
+        }
+    }
 }

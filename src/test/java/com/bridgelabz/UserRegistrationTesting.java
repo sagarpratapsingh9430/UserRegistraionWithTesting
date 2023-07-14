@@ -47,4 +47,16 @@ public class UserRegistrationTesting {
         String expected = "Not Valid";
         Assertions.assertSame(actual,expected);
     }
+    @Test
+    public void givenMobileNumber_WhenProper_ShouldReturnTrue(){
+        String actual = "Valid";
+        String expected = userRegistration.validMobileNumber("91 9981234683");
+        Assertions.assertSame(actual,expected);
+    }
+    @Test
+    public void givenMobileNumber_WhenImProper_ShouldReturnTrue(){
+        String actual = "Not Valid";
+        String expected = userRegistration.validMobileNumber("998797798");
+        Assertions.assertSame(actual,expected);
+    }
 }
