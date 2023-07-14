@@ -30,8 +30,20 @@ public class UserRegistrationTesting {
         Assertions.assertSame(actual,expected);
     }
     @Test
-    public void givenTextWhen_ItNotContains_FirstCapsIn_LastName_AndMinimumThreeAlphabet_ShouldReturnTrue(){
+    public void givenTextWhen_ItContains_FirstSmallIn_email_AndMinimumThreeAlphabet_ShouldReturnTrue(){
         String actual = userRegistration.validLastName("Sa");
+        String expected = "Not Valid";
+        Assertions.assertSame(actual,expected);
+    }
+    @Test
+    public void givenEmailAddress_WhenProper_ShouldReturnTrue(){
+        String actual = userRegistration.validEmail("pratap.sagar22@gmail.com");
+        String expected = "Valid";
+        Assertions.assertSame(actual,expected);
+    }
+    @Test
+    public void givenEmailAddress_WhenImProper_ShouldReturnTrue(){
+        String actual = userRegistration.validEmail("Sagar22@gmail.com");
         String expected = "Not Valid";
         Assertions.assertSame(actual,expected);
     }
